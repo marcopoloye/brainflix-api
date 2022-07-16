@@ -30,7 +30,12 @@ router.post('/', (req, res) => {
         id: uuid(),
         title: req.body.title,
         image: 'https://i.imgur.com/FCzEBsK.jpg',
-        description: req.body.description
+        description: req.body.description,
+        channel: 'Michael Jackson',
+        comments: [{"name":"Billie Jean","comment":"Very cool indeed","likes":3,"timestamp":1632512763000},{"name":"Annie","comment":"I like this","likes":0,"timestamp":1632496261000}],
+        views: '1,354,685',
+        likes: '33,756',
+        timestamp: Date.now()
     };
 
     videosData.push(newVideo);
