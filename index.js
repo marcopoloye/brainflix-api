@@ -12,7 +12,6 @@ app.use('/videos', videoRoutes);
 
 app.use(express.static('./public'))
 
-
 app.listen(8080, () => {
     console.log('server is online!');
 });
