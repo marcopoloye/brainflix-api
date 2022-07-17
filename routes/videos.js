@@ -32,7 +32,7 @@ router.post('/', (req, res) => {
         image: 'https://i.imgur.com/FCzEBsK.jpg',
         description: req.body.description,
         channel: 'Michael Jackson',
-        comments: [{"name":"Billie Jean","comment":"Very cool indeed","likes":3,"timestamp":1632512763000},{"name":"Annie","comment":"I like this","likes":0,"timestamp":1632496261000}],
+        comments: [{"name":"Billie Jean","comment":"Very cool indeed","likes":3,"timestamp": Date.now()},{"name":"Annie","comment":"I like this","likes":0,"timestamp": Date.now()}],
         views: '1,354,685',
         likes: '33,756',
         timestamp: Date.now()
