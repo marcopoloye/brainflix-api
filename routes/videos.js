@@ -3,7 +3,6 @@ const router = express.Router();
 const fs = require('fs');
 const { v4: uuid } = require('uuid');
 
-
 router.get('/', (req, res) => {
     const videosData = JSON.parse(fs.readFileSync('./data/videos.json'));
 
@@ -15,17 +14,12 @@ router.get('/:videoId', (req, res) => {
     const videosData = JSON.parse(fs.readFileSync('./data/videos.json'));
     const foundVideo = videosData.find(video => video.id === videoId);
 
-    console.log(foundVideo)
-
     res.status(200).json(foundVideo);
 })
 
 router.post('/', (req, res) => {
     const videoUserData = req.body;
-    console.log(videoUserData);
-
     const videosData = JSON.parse(fs.readFileSync('./data/videos.json'));
-
     const newVideo = {
         id: uuid(),
         title: req.body.title,
