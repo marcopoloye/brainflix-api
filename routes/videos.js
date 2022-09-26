@@ -18,7 +18,7 @@ router.get('/:videoId', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-    const videoUserData = req.body;
+
     const videosData = JSON.parse(fs.readFileSync('./data/videos.json'));
     const newVideo = {
         id: uuid(),
