@@ -46,7 +46,7 @@ router.post('/:videoId', (req, res) => {
     const foundComments = foundVideo.comments
     
     const newComment = {
-        name: req.body.name, comment: req.body.comment, likes: 0, timestamp: Date.now()
+        name: "Michael Jackson", comment: req.body.comment, likes: 0, timestamp: Date.now()
     };
 
     foundComments.push(newComment)
