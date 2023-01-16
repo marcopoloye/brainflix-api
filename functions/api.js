@@ -7,7 +7,6 @@ const { v4: uuid } = require('uuid');
 
 app.use('/', router);
 
-
 router.get('/home', (req, res) => {
     res.header('Access-Control-Allow-Origin', '*');
     const videosData = JSON.parse(fs.readFileSync('./data/videos.json'));
@@ -15,7 +14,7 @@ router.get('/home', (req, res) => {
     res.json(videosData)
 })
 
-router.get('/:videoId', (req, res) => {
+router.get('/home/:videoId', (req, res) => {
     res.header('Access-Control-Allow-Origin', '*');
     const videoId = req.params.videoId;
     const videosData = JSON.parse(fs.readFileSync('./data/videos.json'));
