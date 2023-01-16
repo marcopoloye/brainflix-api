@@ -27,7 +27,7 @@ router.get('/:videoId', (req, res) => {
     res.status(200).json(foundVideo);
 })
 
-router.post('/', (req, res) => {
+router.post('/home', (req, res) => {
 
     const videosData = JSON.parse(fs.readFileSync('./data/videos.json'));
     const newVideo = {
