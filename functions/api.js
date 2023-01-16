@@ -5,7 +5,7 @@ const app = express();
 const router = express.Router();
 const { v4: uuid } = require('uuid');
 
-app.use('/.netlify/functions/api', router);
+app.use('/', router);
 
 router.get('/test', (req, res) => {
     res.json({
