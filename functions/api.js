@@ -15,6 +15,7 @@ router.get('/home', (req, res) => {
 })
 
 router.get('/home/:videoId', (req, res) => {
+
     res.header('Access-Control-Allow-Origin', '*');
     const videoId = req.params.videoId;
     const videosData = JSON.parse(fs.readFileSync('./data/videos.json'));

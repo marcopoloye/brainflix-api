@@ -6,3 +6,8 @@
     from = "/home"
     to = "/.netlify/functions/api/home"
     status = 200
+
+[[redirects]]
+    from = "/home/*"
+    to = "/.netlify/functions/api/home/*"
+    status = 200
