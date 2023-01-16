@@ -1,15 +1,18 @@
 const express = require('express');
+const serverless = require('serverless-http');
 const router = express.Router();
 const fs = require('fs');
 const { v4: uuid } = require('uuid');
 
 router.get('/', (req, res) => {
+    res.header('Access-Control-Allow-Origin', '*');
     const videosData = JSON.parse(fs.readFileSync('./data/videos.json'));
 
     res.json(videosData)
 })
 
 router.get('/:videoId', (req, res) => {
+    res.header('Access-Control-Allow-Origin', '*');
     const videoId = req.params.videoId;
     const videosData = JSON.parse(fs.readFileSync('./data/videos.json'));
     const foundVideo = videosData.find(video => video.id === videoId);
@@ -18,7 +21,7 @@ router.get('/:videoId', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-
+    res.header('Access-Control-Allow-Origin', '*');
     const videosData = JSON.parse(fs.readFileSync('./data/videos.json'));
     const newVideo = {
         id: uuid(),
@@ -40,6 +43,7 @@ router.post('/', (req, res) => {
 })
 
 router.post('/:videoId', (req, res) => {
+    res.header('Access-Control-Allow-Origin', '*');
     const videoId = req.params.videoId;
     const videosData = JSON.parse(fs.readFileSync('./data/videos.json'));
     const foundVideo = videosData.find(video => video.id === videoId);
@@ -57,3 +61,4 @@ router.post('/:videoId', (req, res) => {
 })
 
 module.exports = router;
+module.exports.handler = serverless(app);
