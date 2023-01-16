@@ -46,7 +46,7 @@ router.post('/home', (req, res) => {
     res.json(newVideo);
 })
 
-router.post('/:videoId', (req, res) => {
+router.post('/home/:videoId', (req, res) => {
     res.header('Access-Control-Allow-Origin', '*');
     const videoId = req.params.videoId;
     const videosData = JSON.parse(fs.readFileSync('./data/videos.json'));
