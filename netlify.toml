@@ -2,7 +2,7 @@
     directory = "functions"
     included_files = ["./data/videos.json"]
 
-[redirects]
+[[redirects]]
     from = "/home"
     to = "/.netlify/functions/api/home"
     status = 200
