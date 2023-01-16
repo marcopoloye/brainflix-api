@@ -13,7 +13,7 @@ router.get('/test', (req, res) => {
     });
 });
 
-router.get('/', (req, res) => {
+router.get('/home', (req, res) => {
     const videosData = JSON.parse(fs.readFileSync('./data/videos.json'));
 
     res.json(videosData)

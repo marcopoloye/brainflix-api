@@ -3,6 +3,6 @@
     included_files = ["./data/videos.json"]
 
 [[redirects]]
-    from = "/"
-    to = "/.netlify/functions/api"
+    from = "/home"
+    to = "/.netlify/functions/api/home"
     status = 200
