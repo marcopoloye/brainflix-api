@@ -1,5 +1,6 @@
 [functions]
     directory = "functions"
+    included_files = ["./data/videos.json"]
 
 [redirects]
-    from = "
+    from = 
