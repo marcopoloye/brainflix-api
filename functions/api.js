@@ -14,12 +14,14 @@ router.get('/test', (req, res) => {
 });
 
 router.get('/home', (req, res) => {
+    res.header('Access-Control-Allow-Origin', '*');
     const videosData = JSON.parse(fs.readFileSync('./data/videos.json'));
 
     res.json(videosData)
 })
 
 router.get('/:videoId', (req, res) => {
+    res.header('Access-Control-Allow-Origin', '*');
     const videoId = req.params.videoId;
     const videosData = JSON.parse(fs.readFileSync('./data/videos.json'));
     const foundVideo = videosData.find(video => video.id === videoId);
@@ -28,7 +30,7 @@ router.get('/:videoId', (req, res) => {
 })
 
 router.post('/home', (req, res) => {
-
+    res.header('Access-Control-Allow-Origin', '*');
     const videosData = JSON.parse(fs.readFileSync('./data/videos.json'));
     const newVideo = {
         id: uuid(),
@@ -50,6 +52,7 @@ router.post('/home', (req, res) => {
 })
 
 router.post('/:videoId', (req, res) => {
+    res.header('Access-Control-Allow-Origin', '*');
     const videoId = req.params.videoId;
     const videosData = JSON.parse(fs.readFileSync('./data/videos.json'));
     const foundVideo = videosData.find(video => video.id === videoId);
